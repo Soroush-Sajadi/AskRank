@@ -1,17 +1,20 @@
 export interface Population {
+  id: string
   lastEstimation: number
+  name: string
   amount: number
   fertilityRate: number
+  medianAge: MedianAge
   populationYearFifty: number
   ethnicGroups: EthnicGroupItem[]
+  religions: ReligionItem[]
+  language: LanguageItem[]
 }
 
 interface EthnicGroupItem {
   name: string 
   amount: number
   percentage: number
-  religions: ReligionItem[]
-  language: LanguageItem[]
 }
 
 export interface ReligionItem {
@@ -26,4 +29,10 @@ export interface LanguageItem {
   percentage: number
   family: number
   official: boolean
+}
+
+interface MedianAge {
+  male: number
+  female: number
+  total: number
 }

@@ -1,4 +1,5 @@
 export interface Economy {
+  id: string
   lastEstimation: number
   size: number
   sizeRank: number
