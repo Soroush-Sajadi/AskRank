@@ -1,13 +1,12 @@
 import { Economy } from './Economy'
 import { Nature } from './Nature'
-import { Population, LanguageItem, ReligionItem } from './Population'
+import { Population } from './Population'
 export interface Country {
+  id: string
   name: string
   continent: string
   area: number
   population: Population
-  language: LanguageItem[]
-  religion: ReligionItem[]
   economy: Economy
   age: number
   independent: boolean
