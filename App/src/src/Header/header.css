@@ -1,0 +1,14 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 100px 20px 100px;
+}
+
+.HeaderAppName {
+  font-size: 30px;
+}
+
+.HeaderIcons > * {
+  margin: 0 20px;
+  cursor: pointer;
+}
