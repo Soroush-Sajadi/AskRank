@@ -5,3 +5,7 @@ export const HeaderNavigation = {
   Contacts: 'Contacts',
   Language: 'Language'
 }
+export const ActionTypes = {
+  HEADER_NAVIGATION: 'HEADER_NAVIGATION',
+  LANGUAGE_DROPDOWN: 'SELECTED_LANGUAGE'
+}

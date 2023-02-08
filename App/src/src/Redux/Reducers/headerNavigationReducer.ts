@@ -1,8 +1,9 @@
-import { HeaderNavigation } from '../../Strings'
+import { ActionTypes } from '../../Strings'
 import { HeaderNavigationAction } from '../Actions/HeaderNavigationAction'
-export const headerNavigationReducer = (state: string = HeaderNavigation.Home , action: HeaderNavigationAction) :string => {
+const initState = ''
+export const headerNavigationReducer = (state: string = initState , action: HeaderNavigationAction) :string => {
   switch(action.type) {
-    case 'HEADER_NAVIGATION': {
+    case ActionTypes.HEADER_NAVIGATION: {
       return action.payload
     }
     default: 
