@@ -8,6 +8,11 @@
   font-size: 30px;
 }
 
+.HeaderIcons {
+  align-items: center;
+  display: flex;
+}
+
 .HeaderIcons > * {
   margin: 0 20px;
   cursor: pointer;
