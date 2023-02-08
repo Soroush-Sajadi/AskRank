@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux'
 import { HeaderNavigation, AppName, ActionTypes } from '../Strings'
+import LanguageDropdown from '../LanguageDropdown'
 import './header.css'
 
 const Header = () => {
@@ -22,7 +23,10 @@ const Header = () => {
           <span onClick={() => onNavigate('')}>{HeaderNavigation.Home}</span>
           <span onClick={() => onNavigate(HeaderNavigation.About)}>{HeaderNavigation.About}</span>
           <span onClick={() => onNavigate(HeaderNavigation.Contacts)}>{HeaderNavigation.Contacts}</span>
-          <span onClick={onSelectLanguage}>{HeaderNavigation.Language}</span>
+          <div>
+            <span onClick={onSelectLanguage}>{HeaderNavigation.Language}</span>
+            {languageDropDown && <LanguageDropdown />}
+          </div>
         </div>
       </div>
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
