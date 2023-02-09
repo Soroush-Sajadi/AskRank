@@ -7,5 +7,8 @@ export const HeaderNavigation = {
 }
 export const ActionTypes = {
   HEADER_NAVIGATION: 'HEADER_NAVIGATION',
-  LANGUAGE_DROPDOWN: 'SELECTED_LANGUAGE'
+  LANGUAGE_DROPDOWN: 'LANGUAGE_DROPDOWN',
+  SELECTED_LANGUAGE: 'SELECTED_LANGUAGE'
 }
+
+export const defaultLanguage = 'English' 

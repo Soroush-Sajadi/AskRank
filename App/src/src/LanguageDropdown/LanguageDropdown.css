@@ -1,3 +1,17 @@
 .LanguageDropdown {
-  position: absolute
+  position: absolute;
+  right: 83px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border: 3px;
+}
+
+.LanguageDropdown > * {
+  padding: 10px 50px 10px 10px;
+  background-color: white;
+  display: flex;
+
+}
+
+.LanguageDropdown > *:hover {
+  background-color: #f8f9fa;
 }
