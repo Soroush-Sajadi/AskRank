@@ -1,4 +1,3 @@
-import { HeaderNavigationAction } from '../Actions/HeaderNavigationAction'
 import { getLanguages } from '../../Data/languages'
 
 export const languagesReducer = async () => {
