@@ -11,7 +11,7 @@ const LanguageDropdown = () => {
   const dispatch = useDispatch();
   const [ allLanguages, setAllLanguages ] = useState<LanguageItem[]>()
   const { languages } = useSelector((state: {languages: LanguageItem[]}) => state)
-  const { selectedLanguage } = useSelector((state: {selectedLanguage: string}) => state)
+  const { selectedLanguage } = useSelector((state: {selectedLanguage: {name: string, code: string}}) => state)
 
   useEffect(() => {
     const solveLanguages = async () => {
@@ -26,8 +26,8 @@ const LanguageDropdown = () => {
     document.removeEventListener("click", onClickOutsideListener)
   }
 
-  const onSelectLanguage = (langName: string) => {
-    dispatch({type: ActionTypes.SELECTED_LANGUAGE, payload: langName})
+  const onSelectLanguage = (lang: {name: string, code: string}) => {
+    dispatch({type: ActionTypes.SELECTED_LANGUAGE, payload: lang})
   }
 
   return (
@@ -36,13 +36,13 @@ const LanguageDropdown = () => {
     }}>
        {allLanguages && 
         allLanguages.map((lang, i) => 
-          <div key={i} onClick={() => onSelectLanguage(lang.name)}>
+          <div key={i} onClick={() => onSelectLanguage(lang)}>
             <div>
               <Flag code={lang.code} height={10} width={25} />
               <span>{lang.name}</span>
             </div>
             {
-              lang.name === selectedLanguage && <CheckMark /> 
+              lang.name === selectedLanguage.name && <CheckMark /> 
             }     
             </div>
         )}

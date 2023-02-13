@@ -1,15 +1,31 @@
 import React, { useState } from "react"
 import { Dropdown } from 'primereact/dropdown';
-
 interface DropdownInputProps {
-  options: string[]
+  options: any[] | undefined
   placeholder: string
+  optionLabel: string
+  onSelect: (val: any) => void
+  disabled?: boolean
+  value?: any
+  width?: string
 }
                 
-const DropdownInput = ({options , placeholder}: DropdownInputProps) => {
-  const [value, setValue] = useState<string>()
+const DropdownInput = ({options , placeholder, optionLabel, onSelect, disabled = false, value, width = '300px'}: DropdownInputProps) => {
+  const onDropdownChange = (val: any) => {
+    onSelect(val)
+  }
+  
+
   return (
-    <Dropdown value={value} onChange={(e) => setValue(e.value)} options={options} optionLabel="name" placeholder={placeholder} className="w-full md:w-14rem" />
+    <Dropdown
+      style={{width}}
+      value={value} 
+      onChange={(e) => onDropdownChange(e.value)}
+      options={options} 
+      optionLabel={optionLabel} 
+      placeholder={placeholder} 
+      disabled={disabled}
+    />
   )
 }
 export default DropdownInput
