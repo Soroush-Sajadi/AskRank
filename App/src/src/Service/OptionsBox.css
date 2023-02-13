@@ -1,0 +1,9 @@
+.OptionsBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.OptionsBox > * {
+  margin: 0 20px;
+}

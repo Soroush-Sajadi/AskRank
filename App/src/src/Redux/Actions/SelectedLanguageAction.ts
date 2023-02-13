@@ -1,4 +1,7 @@
 export type SelectedLanguageAction = {
   type: 'SELECTED_LANGUAGE', 
-  payload: string,
+  payload: { 
+    name: string;
+    code: string
+  },
 }
