@@ -5,5 +5,11 @@ export interface SelectedLanguage {
 
 export interface OptionItem {
   name: string
-  linkedOptions: {name: string}[]
+  val: string
+  linkedOptions: LinkedOptionItem[]
+}
+
+export interface LinkedOptionItem {
+  title: string
+  val: string
 }

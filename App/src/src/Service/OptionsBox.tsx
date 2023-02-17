@@ -2,22 +2,24 @@ import React, { useEffect, useState } from "react"
 import { ActionTypes } from '../Strings'
 import DropdownInput from "../Common/DropdownInput"
 import Btn from "../Common/Components/Btn"
-import { getOptions, fetchDataForSelectedOptions } from '../Data/options'
+import { getOptions } from '../Data/options'
+import { getRankData } from '../Data/rankData'
 import { useSelector, useDispatch } from 'react-redux'
-import { SelectedLanguage, OptionItem } from '../Common/Types/service'
+import { SelectedLanguage, OptionItem, LinkedOptionItem } from '../Common/Types/service'
 import './OptionsBox.css'
 
 const OptionsBox = () => {
   const dispatch = useDispatch()
   const [ options, setOptions ] = useState<OptionItem[]>()
   const [ selcetedPrimeryValue, setSelcetedPrimeryValue ] = useState<OptionItem>()
-  const [ selcetedSecondaryValue, setSelcetedSecondaryValue ] = useState<{name: string}>()
-  const [ linkedOptions, setLinkedOptions ] = useState<{name: string}[]>([])
+  const [ selcetedSecondaryValue, setSelcetedSecondaryValue ] = useState<LinkedOptionItem>()
+  const [ linkedOptions, setLinkedOptions ] = useState<LinkedOptionItem[]>([])
   const { selectedLanguage }  = useSelector((state: {selectedLanguage: SelectedLanguage}) => state)
   const isBtnDisabled = selcetedPrimeryValue && selcetedSecondaryValue
  
   useEffect(() => {
     const solvePromiseOptions = async () => {
+      setLinkedOptions([])
       const options = await getOptions(selectedLanguage.code)
       setOptions(options)
     }
@@ -30,14 +32,13 @@ const OptionsBox = () => {
     setLinkedOptions(val.linkedOptions)
   }
 
-  const onSelectSecondary = (val: {name: string}) => {
+  const onSelectSecondary = (val: LinkedOptionItem) => {
     setSelcetedSecondaryValue(val)
-    dispatch({type: ActionTypes.Selected_Secondary_Option, payload: val.name})
+    dispatch({type: ActionTypes.Selected_Secondary_Option, payload: val.title})
   } 
 
   const onSubmit = async() => {
-    const res = await fetchDataForSelectedOptions(selcetedPrimeryValue!.name, selcetedSecondaryValue!.name )
-
+    const res = await getRankData(selcetedPrimeryValue!.val, selcetedSecondaryValue!.val )
   }
 
   return (
@@ -54,10 +55,10 @@ const OptionsBox = () => {
         <DropdownInput 
           options={linkedOptions} 
           placeholder='Select the area' 
-          optionLabel='name' 
+          optionLabel='title' 
           onSelect={onSelectSecondary} 
           value={selcetedSecondaryValue} 
-          disabled={linkedOptions && linkedOptions.length=== 0} 
+          disabled={linkedOptions && linkedOptions.length === 0} 
         />
         <Btn label='Submit' submit={onSubmit} disabled={!isBtnDisabled}/>
       </div>

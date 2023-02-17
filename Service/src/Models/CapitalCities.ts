@@ -1,5 +1,6 @@
 import {FertilityRate, Population, MedianAge} from './CommonTypes'
-export interface Country {
+
+export interface CapitalCities {
   id: string
   name: string,
   continent: string,
@@ -8,3 +9,4 @@ export interface Country {
   fertilityRate: FertilityRate
   medianAge: MedianAge
 }
+
