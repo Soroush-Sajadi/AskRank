@@ -1,27 +1,93 @@
+
 export const options: any = {  
   gb: [
-    { name: 'Fertility rate', linkedOptions: [{name: 'Country'}] }, 
-    { name: 'Median age', linkedOptions:[{name: 'City'}, {name: 'Country'}]},
-    { name: 'Polulation', linkedOptions: [{name: 'City'}, {name: 'Country'}] },
+    { name: 'Capital Cities',
+      val: 'capitalCities',
+      linkedOptions: [
+        {title: 'Fertility rate', val:'fertilityRate'}, 
+        {title: 'Median age', val:'medianAge'}, 
+        {title: 'Polulation', val: 'population'}
+      ] 
+    }, 
+    { name: 'Country',
+      val: 'countries',
+      linkedOptions: [
+          {title: 'Fertility rate', val:'fertilityRate'}, 
+          {title: 'Median age', val:'medianAge'}, 
+          {title: 'Polulation', val: 'population'}
+        ]
+    },
   ],
   es: [
-    {name: 'Edad mediana', linkedOptions: [{name: 'Ciudad'}, {name: 'País'}]},
-    {name: 'Población', linkedOptions: [{name: 'Ciudad'}, {name: 'País'}]}, 
-    {name: 'Tasa de fecundidad', linkedOptions: [{name: 'Ciudad'}, {name: 'País'}]}, 
+    { name: 'Ciudades Capitales',
+      val: 'capitalCities',
+      linkedOptions: [
+        {title: 'Edad mediana', val:'medianAge'}, 
+        {title: 'Población', val: 'population'}, 
+        {title: 'Tasa de fecundidad', val:'fertilityRate'}
+      ]
+    },
+    { name: 'País',
+      val: 'countries',
+      linkedOptions: [
+        {title: 'Edad mediana', val:'medianAge'}, 
+        {title: 'Población', val: 'population'}, 
+        {title: 'Tasa de fecundidad', val:'fertilityRate'}
+      ]
+    }, 
   ],
   fr: [
-    {name: 'Âge médian',  linkedOptions: [{name: 'Pays'}, {name: 'Ville'}]},
-    {name: 'Population', linkedOptions: [{name: 'Pays'}, {name: 'Ville'}]}, 
-    {name: 'Taux de fécondité', linkedOptions: [{name: 'Pays'}]}, 
+    { name: 'Pays',
+      val: 'countries',
+      linkedOptions: [
+        {title: 'Âge médian', val:'medianAge'}, 
+        {title: 'Population',  val: 'population'}, 
+        {title: 'Taux de fécondité', val:'fertilityRate'}
+      ]
+    },
+    { name: 'capitales',
+      val: 'capitalCities',
+      linkedOptions: [
+        {title: 'Âge médian', val:'medianAge'}, 
+        {title: 'Population',  val: 'population'}, 
+        {title: 'Taux de fécondité', val:'fertilityRate'}
+      ]
+    }, 
   ],
   de: [
-    {name: 'Bevölkerung', linkedOptions: [{name: 'Land'}, {name: 'Stadt'}]}, 
-    {name: 'Fertilitätsrate', linkedOptions: [{name: 'Land'}]}, 
-    {name: 'Durchschnittsalter', linkedOptions: [{name: 'Land'}, {name: 'Stadt'}]}
+    { name: 'Hauptstädte', 
+      val: 'capitalCities',
+      linkedOptions: [
+        {title: 'Bevölkerung', val: 'population'}, 
+        {title: 'Fertilitätsrate', val:'fertilityRate'}, 
+        {title: 'Durchschnittsalter', val:'medianAge'}      
+      ]
+    }, 
+    { name: 'Land',
+      val: 'countries',
+      linkedOptions: [
+        {title: 'Bevölkerung', val: 'population'}, 
+        {title: 'Fertilitätsrate', val:'fertilityRate'}, 
+        {title: 'Durchschnittsalter', val:'medianAge'}
+      ]
+    }, 
   ],
   tr: [
-    {name: 'Nüfus', linkedOptions: [{name: 'Şehir'}, {name: 'Ülke'}]}, 
-    {name: 'Doğurganlik orani', linkedOptions: [{name: 'Ülke'}]}, 
-    {name: 'Medyan yaş', linkedOptions: [{name: 'Şehir'}, {name: 'Ülke'}]}
+    { name: 'Başkentler',
+      val: 'capitalCities',
+      linkedOptions: [
+        {title: 'Doğurganlik orani', val:'fertilityRate'}, 
+        {title: 'Medyan yaş', val:'medianAge'}, 
+        {title: 'Nüfus',  val: 'population'}
+      ]
+    }, 
+    { name: 'Ülke',
+      val: 'countries',
+      linkedOptions: [
+        {title: 'Doğurganlik orani', val:'fertilityRate'},
+        {title: 'Medyan yaş', val:'medianAge'},
+        {title: 'Nüfus',  val: 'population'}
+      ]
+    }, 
   ]
 } 

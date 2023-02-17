@@ -5,7 +5,9 @@ import router from './Contorller/router'
 import population from './Contorller/population'
 import languages  from './Contorller/languages';
 import options from './Contorller/options'
-import data from './Contorller/data'
+import countires from './Contorller/countires'
+import capitalCities from './Contorller/capitalCities'
+
 const app: Application = express();
 const port:string = process.env.DEV_PORT
 app.use(cors());
@@ -16,4 +18,5 @@ app.use(router)
 app.use(population)
 app.use(languages)
 app.use(options)
-app.use(data)
+app.use(countires)
+app.use(capitalCities)
