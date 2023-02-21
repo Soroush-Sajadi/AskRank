@@ -15,7 +15,6 @@ const DropdownInput = ({options , placeholder, optionLabel, onSelect, disabled =
     onSelect(val)
   }
   
-
   return (
     <Dropdown
       style={{width}}
