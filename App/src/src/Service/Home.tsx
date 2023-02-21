@@ -1,5 +1,5 @@
 import React from "react"
-import OptionsBox from "./OptionsBox"
+import OptionsBox from "./OptionsBox/OptionsBox"
 const Home = () => {
   return(
     <OptionsBox />

@@ -13,14 +13,14 @@ export const capitalCities = [
         today: 1.61,
         fertilityRateYearFifty: 1.51
       },
-      MedianAge:
+      medianAge:
       {
         male: 46.5,
         female: 49.1,
         total: 47.8
       },
     },
-     {
+    {
       id: "002002",
       name: 'Stockholm',
       continent:'Europe',
@@ -33,7 +33,7 @@ export const capitalCities = [
         today: 1.60,
         fertilityRateYearFifty: 1.75
       },
-      MedianAge: {
+      medianAge: {
         male: 40.1,
         female: 42.1,
         total: 41.1
@@ -52,7 +52,7 @@ export const capitalCities = [
         today: 	1.69,
         fertilityRateYearFifty: 1.56
       },
-      MedianAge: {
+      medianAge: {
         male:  31.5,
         female: 32,
         total: 31.7
@@ -62,7 +62,7 @@ export const capitalCities = [
       id: "004004",
       name: 'Ankara',
       continent:'Europe',
-      lastEstimation: 2018,
+      yearEstimation: 2018,
       population: {
         amount: 4561980,
         populationYearFifty: 5612444,
@@ -71,7 +71,7 @@ export const capitalCities = [
         today: 1.94,
         fertilityRateYearFifty: 1.90
       },
-      MedianAge: {
+      medianAge: {
         male: 31.7,
         female: 32.8,
         total: 32.2
@@ -81,7 +81,7 @@ export const capitalCities = [
       id: "005005",
       name: 'Ottawa',
       Ottawa: 'America',
-      lastEstimation: 2018,
+      yearEstimation: 2018,
       population: {
         amount: 1488307,
         populationYearFifty: 1562989,
@@ -90,7 +90,7 @@ export const capitalCities = [
         today: 1.57,
         fertilityRateYearFifty: 1.66
       },
-      MedianAge:
+      medianAge:
       {
         male: 40.6,
         female: 42.9,
