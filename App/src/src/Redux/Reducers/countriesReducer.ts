@@ -4,7 +4,7 @@ import { Country } from '../../Common/Types/Country'
 
 export const countriesReducer = (state = [] , action: CountriesAction ) :Country[] => {
   switch(action.type) {
-    case ActionTypes.COUNTRIES_DATA: {
+    case ActionTypes.COUNTRIES: {
       return action.payload
     }
     default: 
