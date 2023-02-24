@@ -1,4 +1,3 @@
-import { Captions } from '../Common/Types/Captions'
 export const captions: any = {
   gb: {
     '0001': 'Table',
