@@ -6,8 +6,6 @@ import TableBox from '../../Service/Table/TableBox'
 import ChartBox from '../../Service/Chart/ChartBox'
 import './DashBox.css'
 
-
-
 interface HeadersProps {
   visualTabs: {
     caption: string

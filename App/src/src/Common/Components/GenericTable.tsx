@@ -1,33 +1,20 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
+import { translate } from "../../Translate/translate";
+
 interface GenericTableProps {
   commonData: any
   selectedData: any[]
+  children?: ReactNode
 }
-const GenericTable = ({commonData, selectedData}: GenericTableProps) => {
+const GenericTable = ({commonData, selectedData, children}: GenericTableProps) => {
   const minWidthHeader = 95 / (selectedData.length + 1) 
-  console.log(minWidthHeader)
-  console.log(selectedData)
+  
+
   return (
     <div style={{ display: "flex" }}>
-      <DataTable
-        value={commonData.data}
-        header={commonData.header}
-        removableSort
-        tableStyle={{ minWidth: `${minWidthHeader}rem` }}
-
-      > 
-        {commonData.titles.map((title: string, index: number) => {
-          return <Column
-            key={index}
-            field={title}
-            header={title}
-            sortable
-          >
-          </Column>
-        })}
-      </DataTable>
+     {children}
       {selectedData.map((item, index) => {
         return <DataTable
           value={item.data}
@@ -36,11 +23,11 @@ const GenericTable = ({commonData, selectedData}: GenericTableProps) => {
           key={index}
           tableStyle={{ minWidth: `${minWidthHeader}rem` }}
         >
-          {item.titles.map((title: string, index: number) => {
+          {item.titles.map((title: {header: string, field: string}, index: number) => {
             return <Column
             key={index}
-            field={title}
-            header={title}
+            field={title.field}
+            header={translate(title.header)}
             sortable
             >
             </Column>

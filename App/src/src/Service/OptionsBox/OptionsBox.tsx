@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { SelectedLanguage, OptionItem, LinkedOptionItem } from '../../Common/Types/service'
 import { translate } from '../../Translate/translate'
 import { dispatchData } from './optionBoxUtils'
+import { ProgressSpinner } from 'primereact/progressspinner';
 import './OptionsBox.css'
 
 const OptionsBox = () => {
@@ -45,10 +46,10 @@ const OptionsBox = () => {
   } 
 
   const onSubmit = async() => {
-    dispatch({type: ActionTypes.TOPIC, payload: topic!.val.toLocaleUpperCase()})
+    dispatch({type: ActionTypes.TOPIC, payload: topic!.val})
     dispatch({type: ActionTypes.SUB_TOPIC, payload: subTopic!.val})
     const rankData = await getRankData(topic!.val, subTopic!.val )
-    dispatchData(topic!.val.toLocaleUpperCase(), rankData, dispatch)  
+    dispatchData(topic!.val, subTopic!.val ,rankData, dispatch)  
     setData(rankData)
   }
 

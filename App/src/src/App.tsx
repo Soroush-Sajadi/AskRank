@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   const { headerNavigation } = useSelector((state: {headerNavigation: string}) => state)
-
+  localStorage.setItem('languageCode', 'gb')
   return (
     <div className="App">
       <Header />

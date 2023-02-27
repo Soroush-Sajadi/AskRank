@@ -1,8 +1,9 @@
 import { ActionTypes } from '../../Strings'
 import { CountriesAction } from '../Actions/CountriesAction'
-import { Country } from '../../Common/Types/Country'
+import { CountryForTable } from '../../Common/Types/Country'
 
-export const countriesReducer = (state = [] , action: CountriesAction ) :Country[] => {
+
+export const countriesReducer = (state = {} , action: CountriesAction ) :CountryForTable | {} => {
   switch(action.type) {
     case ActionTypes.COUNTRIES: {
       return action.payload
