@@ -16,8 +16,8 @@ export const ActionTypes = {
 }
 
 export const DataTopics = {
-  COUNTRIES : 'COUNTRIES',
-  CAPITAL_CITIES: 'CAPITALCITIES'
+  COUNTRIES : 'countries',
+  CAPITAL_CITIES: 'capitalcities'
 }
 
 export const DataVisualisation = {

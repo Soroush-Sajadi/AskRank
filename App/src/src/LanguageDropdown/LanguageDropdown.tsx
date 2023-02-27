@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react"
-import { useDispatch } from 'react-redux'
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from 'react-redux'
 import Flag from 'react-world-flags'
 import { LanguageItem } from '../Data/languages.type'
 import { ActionTypes } from '../Strings'
@@ -27,6 +26,7 @@ const LanguageDropdown = () => {
   }
 
   const onSelectLanguage = (lang: {name: string, code: string}) => {
+    localStorage.setItem('languageCode', lang.code)
     dispatch({type: ActionTypes.SELECTED_LANGUAGE, payload: lang})
   }
 

@@ -1,10 +1,7 @@
 import { captions } from './captions'
-import { useSelector } from 'react-redux'
-import { SelectedLanguage } from '../Common/Types/service'
-
+import { store } from '../Redux/store'
 
 export const translate = (caption: string): string => {
-  const { selectedLanguage }  = useSelector((state: {selectedLanguage: SelectedLanguage}) => state)
-  return captions[selectedLanguage.code][caption]
-
+  const langCode = store.getState().selectedLanguage.code
+  return captions[langCode][caption]
 }
