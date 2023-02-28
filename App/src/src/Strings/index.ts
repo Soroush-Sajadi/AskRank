@@ -25,4 +25,10 @@ export const DataVisualisation = {
   TABLE: 'Table'
 }
 
+export const COUNTRIES_PROPERTIES = {
+  POPULATION: 'population',
+  FERTILITY_RATE: 'fertilityRate',
+  MEDIAN_AGE: 'medianAge'
+}
+
 export const defaultLanguage = 'English' 

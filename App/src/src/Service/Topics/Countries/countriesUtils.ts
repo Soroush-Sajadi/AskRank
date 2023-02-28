@@ -1,5 +1,5 @@
-import { Country } from "../Common/Types/Country"
-import { words } from "../Translate/words"
+import { Country } from "../../../Common/Types/Country"
+import { words } from "../../../Translate/words"
 
 export const getDataPreparedCountries = (data: Country[], subTopic: string) => {
   const titles = getTitles(data[0], subTopic)
@@ -41,3 +41,4 @@ const getTranslateCode = (titles: string[]) => {
     } 
   })
 }
+

@@ -1,7 +1,7 @@
 import React from "react"
 import { useSelector } from 'react-redux'
 import { DataTopics } from '../../Strings'
-import CountriesTable from "../Topics/CountriesTable"
+import CountriesTable from "../Topics/Countries/CountriesTable"
 import CapitalCities from "../Topics/CapitalCities"
 
 const TableBox = () => {

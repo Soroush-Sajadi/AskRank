@@ -1,5 +1,5 @@
 import { DataTopics, ActionTypes } from '../../Strings'
-import { getDataPreparedCountries } from '../serviceUtils'
+import { getDataPreparedCountries } from '../Topics/Countries/countriesUtils'
 import { CountryForTable } from '../../Common/Types/Country'
 
 

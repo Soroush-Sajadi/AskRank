@@ -4,6 +4,7 @@ export const countries = [
       name: 'Germany',
       continent:'Europe',
       yearEstimation: 2018,
+      code: 'de',
       population: {
         amount: 83155031,
         populationYearFifty: 100321432,
@@ -21,9 +22,10 @@ export const countries = [
     },
     {
       id: "001002",
-      name: 'Swedish',
+      name: 'Sweden',
       continent:'Europe',
       yearEstimation: 2018,
+      code: 'se',
       population: {
         amount: 10345234,
         populationYearFifty: 1291823,
@@ -43,6 +45,7 @@ export const countries = [
       yearEstimation: 2018,
       continent:'Asia',
       name: 'Iran',
+      code: 'ir',
       population: {
         amount: 85888910,
         populationYearFifty: 114321432,
@@ -62,6 +65,7 @@ export const countries = [
       yearEstimation: 2018,
       name: 'Turkey',
       continent:'Europe',
+      code: 'tr',
       population: {
         amount: 82482383,
         populationYearFifty: 102321432,
@@ -81,6 +85,7 @@ export const countries = [
       name: 'Canada',
       continent:'America',
       yearEstimation: 2018,
+      code: 'ca',
       population: {
         amount: 37943231,
         populationYearFifty: 40398138,

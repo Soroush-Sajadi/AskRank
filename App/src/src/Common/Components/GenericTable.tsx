@@ -18,7 +18,7 @@ const GenericTable = ({commonData, selectedData, children}: GenericTableProps) =
       {selectedData.map((item, index) => {
         return <DataTable
           value={item.data}
-          header={item.header}
+          header={translate(item.header)}
           removableSort
           key={index}
           tableStyle={{ minWidth: `${minWidthHeader}rem` }}

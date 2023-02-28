@@ -4,6 +4,7 @@ export interface Country {
   name: string,
   continent: string,
   yearEstimation: number,
+  code: string,
   population: Population
   fertilityRate: FertilityRate
   medianAge: MedianAge

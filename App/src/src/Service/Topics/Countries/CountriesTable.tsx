@@ -1,13 +1,13 @@
 import React from "react"
 import { useSelector } from 'react-redux'
-import GenericTable from '../../Common/Components/GenericTable'
-import { SelectedLanguage } from '../../Common/Types/service'
+import GenericTable from '../../../Common/Components/GenericTable'
+import { SelectedLanguage } from '../../../Common/Types/service'
 
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { CountryForTable } from '../../Common/Types/Country'
+import { CountryForTable } from '../../../Common/Types/Country'
 import Flag from 'react-world-flags'
-import { translate } from "../../Translate/translate";
+import { translate } from "../../../Translate/translate";
 import { useEffect } from "react";
 
 const CountriesTable = () => {
@@ -31,19 +31,19 @@ const CountriesTable = () => {
         removableSort
         tableStyle={{ minWidth: `${minWidthHeader}rem` }}
       > 
-          <Column
-            field={'name'}
-            header={translate('0007')}
-            sortable
-            body={bodyTemplate}
-          >
-          </Column>
-          <Column
-            field={'continent'}
-            header={translate('0008')}
-            sortable
-          >
-          </Column>
+        <Column
+          field={'name'}
+          header={translate('0007')}
+          sortable
+          body={bodyTemplate}
+        >
+        </Column>
+        <Column
+          field={'continent'}
+          header={translate('0008')}
+          sortable
+        >
+        </Column>
       </DataTable>
     )
   }
