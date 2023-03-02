@@ -12,7 +12,8 @@ export const ActionTypes = {
   TOPIC: 'TOPIC',
   SUB_TOPIC: 'SUB_TOPIC',
   COUNTRIES: 'COUNTRIES',
-  CAPITAL_CITIES_DATA: 'CAPITAL_CITIES_DATA'
+  CAPITAL_CITIES_DATA: 'CAPITAL_CITIES_DATA',
+  SORT_SET: 'SORT_SET'
 }
 
 export const DataTopics = {
@@ -29,6 +30,19 @@ export const COUNTRIES_PROPERTIES = {
   POPULATION: 'population',
   FERTILITY_RATE: 'fertilityRate',
   MEDIAN_AGE: 'medianAge'
+}
+
+export const TABLES_NAME = {
+  COUNTRIES : 'countries',
+  POPULATION: 'population',
+  FERTILITY_RATE: 'fertilityRate',
+  MEDIAN_AGE: 'medianAge'
+}
+
+export const COLUMNS_NAME = {
+  NAME: 'name',
+  CONTINENT: 'continent',
+  AMOUNT: 'amount'
 }
 
 export const defaultLanguage = 'English' 

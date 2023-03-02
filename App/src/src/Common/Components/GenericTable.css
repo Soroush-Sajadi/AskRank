@@ -1,0 +1,4 @@
+.p-datatable-wrapper > .p-datatable-table > .p-datatable-thead > tr > th > .p-column-header-content {
+  display: block;
+  align-items: center;
+}

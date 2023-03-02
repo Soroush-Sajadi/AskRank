@@ -13,3 +13,9 @@ export interface MedianAge {
   female: number,
   total: number
 }
+
+export interface SortSet {
+  table: string
+  column: string
+  sortingOption?: string
+} 

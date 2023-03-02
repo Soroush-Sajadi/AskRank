@@ -46,11 +46,12 @@ const OptionsBox = () => {
   } 
 
   const onSubmit = async() => {
-    dispatch({type: ActionTypes.TOPIC, payload: topic!.val})
-    dispatch({type: ActionTypes.SUB_TOPIC, payload: subTopic!.val})
     const rankData = await getRankData(topic!.val, subTopic!.val )
     dispatchData(topic!.val, subTopic!.val ,rankData, dispatch)  
     setData(rankData)
+    dispatch({type: ActionTypes.TOPIC, payload: topic!.val})
+    dispatch({type: ActionTypes.SUB_TOPIC, payload: subTopic!.val})
+    
   }
 
   return (
