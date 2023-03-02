@@ -1,5 +1,8 @@
+import { Population, SortSet } from "../../../Common/Types/CommonTypes"
 import { Country } from "../../../Common/Types/Country"
 import { words } from "../../../Translate/words"
+import sortBy from 'lodash/sortBy'
+import { TABLES_NAME } from "../../../Strings"
 
 export const getDataPreparedCountries = (data: Country[], subTopic: string) => {
   const titles = getTitles(data[0], subTopic)
@@ -9,7 +12,7 @@ export const getDataPreparedCountries = (data: Country[], subTopic: string) => {
 
   return {
     commonData: commonData,
-    selectedData: [{header: words[subTopic], titles: translateCode, data: selectedData}]
+    selectedData: [{header: words[subTopic], field: subTopic, titles: translateCode, data: selectedData}]
   }
 }
 
@@ -40,5 +43,24 @@ const getTranslateCode = (titles: string[]) => {
       header: words[title]
     } 
   })
+}
+
+export const getCountriesSorted = (countries: Country[], sortSet: SortSet) => {
+  if(sortSet.table ===TABLES_NAME.COUNTRIES) {
+    const data = sortBy(countries, (country: any) => country[sortSet.column])
+    if(sortSet.sortingOption === 'DECS') {
+      return data.reverse()
+    }
+    return data
+  }
+  const data = sortBy(countries, (country: any) => country[sortSet.table][sortSet.column])
+  if(sortSet.sortingOption === 'DECS') {
+    return data.reverse()
+  }
+ return data
+}
+
+export const checkIsFocusedColumn = (currentColumn: SortSet, selectedColumn: SortSet) => {
+  return (currentColumn.table === selectedColumn.table) && (currentColumn.column === selectedColumn.column)
 }
 

@@ -7,6 +7,7 @@ import { topicReducer } from './Reducers/topicReducer'
 import { subTopicReducer } from './Reducers/subTopicReducer'
 import { capitalCitiesReducer } from './Reducers/capitalCitiesReducer'
 import { countriesReducer } from './Reducers/countriesReducer'
+import { sortOrderReducer } from './Reducers/sortOrderReducer'
 
 const rootReducer = combineReducers({
   headerNavigation: headerNavigationReducer,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   topic: topicReducer,
   subTopic: subTopicReducer,
   countries: countriesReducer,
-  capitalCities: capitalCitiesReducer
+  capitalCities: capitalCitiesReducer,
+  sortSet: sortOrderReducer
 })
 export type RootState = ReturnType<typeof rootReducer>
 export const store = createStore(rootReducer);
