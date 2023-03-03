@@ -1,8 +1,8 @@
-import { Population, SortSet } from "../../../Common/Types/CommonTypes"
-import { Country } from "../../../Common/Types/Country"
-import { words } from "../../../Translate/words"
+import { Population, SortSet } from "src/Common/Types/CommonTypes"
+import { Country } from "src/Common/Types/Country"
+import { words } from "src/Translate/words"
 import sortBy from 'lodash/sortBy'
-import { TABLES_NAME } from "../../../Strings"
+import { TABLES_NAME } from "src/Strings"
 
 export const getDataPreparedCountries = (data: Country[], subTopic: string) => {
   const titles = getTitles(data[0], subTopic)
@@ -46,6 +46,7 @@ const getTranslateCode = (titles: string[]) => {
 }
 
 export const getCountriesSorted = (countries: Country[], sortSet: SortSet) => {
+  console.log(sortSet)
   if(sortSet.table ===TABLES_NAME.COUNTRIES) {
     const data = sortBy(countries, (country: any) => country[sortSet.column])
     if(sortSet.sortingOption === 'DECS') {

@@ -1,4 +1,4 @@
-import { DataTopics, ActionTypes, TABLES_NAME, COLUMNS_NAME } from '../../Strings'
+import { DataTopics, ActionTypes } from 'src/Strings'
 
 export const dispatchData = (topic: string, subTopic: string ,payload: any , dispatch: (action: {type: string, payload: any}) => void) => {
   const [key] = Object.entries( payload[0][subTopic])[0];

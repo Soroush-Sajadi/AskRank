@@ -1,25 +1,30 @@
 import React, { useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch } from 'react-redux'
-import { faSortAlphaAsc, faSortAlphaDesc } from '@fortawesome/free-solid-svg-icons'
-import { SortSet } from "../Types/CommonTypes"
-import { ActionTypes } from '../../Strings'
+import { faSortAmountDesc, faSortAmountAsc } from '@fortawesome/free-solid-svg-icons'
+import { SortSet } from "src/Common/Types/CommonTypes"
+import { ActionTypes } from 'src/Strings'
 
-interface SortIconAlphabetProps {
+interface SortIconNumericProps {
   isActiveSortColumn?: boolean
   sortPress: (sort: SortSet) => void
   table: string
   column: string
 }
 
-const SortIconAlphabet = ({isActiveSortColumn = false, sortPress, table, column}: SortIconAlphabetProps) => {
+const SortIconNumeric = ({isActiveSortColumn = false, sortPress, table, column}: SortIconNumericProps) => {
   const [isAsc, setIsAsc] = useState<boolean>(true)
   const dispatch = useDispatch()
 
   if(!isActiveSortColumn) {
     return(
       <div style={{cursor: 'pointer'}}>
-        <FontAwesomeIcon icon={faSortAlphaAsc} color={'gray'} onClick={() =>  dispatch( {type: ActionTypes.SORT_SET, payload:{table, column, sortingOption:'ASCS'}})}/>
+        <FontAwesomeIcon 
+          icon={faSortAmountAsc} 
+          color={'gray'} 
+          onClick={
+            () => dispatch( {type: ActionTypes.SORT_SET, payload:{table, column, sortingOption:'DECS'}} )
+          }/>
       </div>
     
     )
@@ -37,9 +42,9 @@ const SortIconAlphabet = ({isActiveSortColumn = false, sortPress, table, column}
   
   return (
     <div style={{cursor: 'pointer'}}>
-      <FontAwesomeIcon icon={isAsc ? faSortAlphaAsc: faSortAlphaDesc} onClick={toggleSort} color={'green'}  />
-    </div>  
+      <FontAwesomeIcon icon={isAsc ? faSortAmountAsc: faSortAmountDesc} onClick={toggleSort} color={'green'}  />
+    </div>
   )
 }
 
-export default SortIconAlphabet
+export default SortIconNumeric

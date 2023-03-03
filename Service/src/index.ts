@@ -1,5 +1,5 @@
 import { Application } from 'express';
-import express, { Express, Request, Response } from 'express';
+import express from 'express';
 import cors from 'cors';
 import router from './Contorller/router'
 import population from './Contorller/population'

@@ -1,15 +1,15 @@
 import React from "react"
 import { useSelector } from 'react-redux'
-import GenericTable from '../../../Common/Components/GenericTable'
+import GenericTable from 'src/Common/Components/GenericTable'
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { Country, CountryForTable } from '../../../Common/Types/Country'
+import { Country, CountryForTable } from 'src/Common/Types/Country'
 import Flag from 'react-world-flags'
-import { translate } from "../../../Translate/translate";
-import SortIconAlphabet from "../../../Common/Components/SortIconAlphabet";
-import { getDataPreparedCountries, getCountriesSorted, checkIsFocusedColumn } from '../../Topics/Countries/countriesUtils'
-import { TABLES_NAME, COLUMNS_NAME } from '../../../Strings'
-import { SortSet } from "../../../Common/Types/CommonTypes";
+import { translate } from "src/Translate/translate";
+import SortIconAlphabet from "src/Common/Components/SortIconAlphabet";
+import { getDataPreparedCountries, getCountriesSorted, checkIsFocusedColumn } from 'src/Service/Topics/Countries/countriesUtils'
+import { TABLES_NAME, COLUMNS_NAME } from 'src/Strings'
+import { SortSet } from "src/Common/Types/CommonTypes";
 
 const CountriesTable = () => {
   const { subTopic } = useSelector((state: {subTopic: string}) => state)
