@@ -5,7 +5,8 @@ import { translate } from "../../Translate/translate";
 import './GenericTable.css'
 import { SortSet } from "../Types/CommonTypes";
 import { checkIsFocusedColumn } from '../../Service/Topics/Countries/countriesUtils'
-import SortIconAlphabet from "../../Common/Components/SortIconAlphabet";
+import SortIconAlphabet from "src/Common/Components/SortIconAlphabet";
+import SortIconNumeric from 'src/Common/Components/SortIconNumeric'
 
 
 
@@ -25,7 +26,7 @@ const GenericTable = ({ selectedData, children, sortSet}: GenericTableProps) => 
     return(
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
         <span>{translate(header)}</span>
-        <SortIconAlphabet isActiveSortColumn={isFocusedColumn} table={table} column={field} sortPress={onSortPress}/>
+        <SortIconNumeric isActiveSortColumn={isFocusedColumn} table={table} column={field} sortPress={onSortPress}/>
       </div>
     )
   }

@@ -1,7 +1,5 @@
 import { mockDB } from '../Mocks/mockDB'
 import { Country } from '../Models/Country'
-import { COUNTRY_PROPERTIES } from './constants'
-import sortBy from 'lodash/sortBy'
 
 
 export const getCountriesDataForRef = (subTopic: string) => {
